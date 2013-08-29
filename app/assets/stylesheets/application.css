@@ -1,0 +1,183 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+.inline form {display: inline; }
+
+label {
+	padding-right: 10px;
+}
+
+*{
+
+	font-family: "News706BT-RomanC",Georgia;
+	color:black;
+
+}
+
+a {
+	color:black;
+}
+
+input {
+	display:inline-block;
+	max-width: 350px;
+	
+}
+
+
+#logo {
+
+	margin-top:10px;
+	margin-left:10px;
+	margin-right:30px;
+	height:100px;
+	
+}
+
+
+.button:hover
+{
+	opacity:0.4;
+	background-color:red !important;
+}
+
+.button.selected {
+
+	background-color: red;
+    opacity: 1; 
+
+} 
+
+.button.black {
+
+	background-color: black;
+	width: 180px;
+    opacity: 1; 
+
+} 
+
+#gotit_button{
+	background-color:black;
+	border-color:black;
+	width:220px;
+
+}
+#following_button{
+	background-color:black;
+	border-color:black;
+	width:220px;
+}
+
+#not_getting_button{
+	background-color:black;
+	border-color:black;
+	width:220px;
+}
+.inline-list > li > *{
+	color:white;
+
+}
+
+.form-element {
+	display:inline;
+
+}
+
+
+
+#navbar {
+
+	margin-top:0px;
+	background-color:#000000;
+	color:white;
+}
+
+#menu{
+	width:200px;
+	display:inline-block;
+	text-align:right;
+}
+.menu-item{
+	text-align:right;
+	color:white;
+	display:inline;
+	line-height: 60px;
+	margin-top:15px;
+
+}
+
+.content{
+
+	margin:20px;
+
+}
+
+#sidebar {
+
+	margin-top:20px;
+	float:right;
+
+}
+
+/*.menu-item a{
+	color:white;
+	margin-right:10px;
+
+	border-color: #FFFFFF;
+	border-right:2px;
+
+
+}
+*/
+
+/*.button {
+
+	background-color: #000000;
+
+}
+
+.form-element {
+
+	display:inline;
+
+}*/
+
+/*#firstbutton {
+
+	width:150px;
+	height:50px;
+	background-color:red;
+
+}
+
+#secondbutton {
+
+	width:150px;
+	height:50px;
+	background-color:red;
+
+}
+
+#thirdbutton {
+
+	width:150px;
+	height:50px;
+	background-color:red;
+
+}
+
+#main {
+{
+float:left 
+}  */  

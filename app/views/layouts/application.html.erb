@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Biospace Content Repository</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <div class="row" id="navbar">
+    <div class="large-3 columns" >
+      <h1><img alt="Hb Logo" id="logo" src="/assets/hb-logo-white.png" height="100px" /></h1>
+    </div>
+    <div class="large-9 columns" id="navbar">
+      <ul class="inline-list right">
+        <li style="color:white"> login </li>
+
+      </ul>
+    </div>
+  </div>
+  <div class="row" id="alertbar">
+    <div class="large-12 columns">
+     <p class="notice" align-text="centered"><%= notice %></p>
+       <p class="alert" align-text="centered"><%= alert %></p>
+ </div>
+ </div>
+ <div class="row" id="content">
+  <div class="large-12 columns">
+	<%= yield %>
+  </div>
+  </div>
+ <footer class="row">
+    <div class="large-12 columns">
+      <hr />
+      <div class="row">
+        <div class="large-6 columns">
+          <p>&copy; Harlem Biospace.</p>
+        </div>
+        <div class="large-6 columns">
+          <ul class="inline-list right">
+
+          </ul>
+        </div>
+      </div>
+    </div> 
+  </footer>
+</body>
+</html>
