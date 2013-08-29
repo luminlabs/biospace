@@ -10,6 +10,12 @@ gem "cancan"
 gem 'linkedin'
 gem 'omniauth'
 gem 'omniauth-linkedin'
+
+gem "capybara", ">= 2.0.2", :group => :test
+gem "factory_girl_rails", ">= 4.2.0", :group => [:development, :test]
+gem "devise", ">= 2.2.3"
+gem "better_errors", ">= 0.3.2", :group => :development
+gem "binding_of_caller", ">= 0.6.8", :group => :development
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
