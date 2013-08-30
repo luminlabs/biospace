@@ -15,8 +15,13 @@
     </div>
     <div class="large-9 columns" id="navbar">
       <ul class="inline-list right">
-        <li style="color:white"> login </li>
-
+            <% if current_user %>
+              <li class="menu-item">Hello <%= current_user.name%>!</li>
+              <li class="menu-item"><%= link_to "Log out", destroy_user_session_path, :method => 'delete' %></li>
+            <% else %>
+              <li class="menu-item"><%= link_to "Sign up", new_user_registration_path %> </li>  
+              <li class="menu-item"><%= link_to "Log in", new_user_session_path %></li>
+            <% end %>
       </ul>
     </div>
   </div>
