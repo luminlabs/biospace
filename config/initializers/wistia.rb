@@ -1,0 +1,1 @@
+Wistia.use_config! 'config/wistia.yml'

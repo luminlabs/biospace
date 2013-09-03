@@ -11,6 +11,8 @@ gem 'linkedin'
 gem 'omniauth'
 gem 'omniauth-linkedin'
 
+gem 'wistia-api'
+
 
 gem "devise"
 group :development do 

@@ -17,5 +17,10 @@
   <%end%>
   <div><%= f.submit "Sign up" %></div>
 <% end %>
-<%= link_to "Sign in with LinkedIn", user_omniauth_authorize_path(:linkedin) %>
 <%= render "devise/shared/links" %>
+<%- if devise_mapping.omniauthable? %>
+ <br><hr>  Or sign-up using:&nbsp&nbsp
+ <%= link_to ( (image_tag 'linkedin-logo.jpg')),user_omniauth_authorize_path(:linkedin) %>
+<% end -%>
+
+

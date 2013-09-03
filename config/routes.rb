@@ -5,6 +5,14 @@ Biospace::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
   root :to => 'content#index' 
+
+  get '/dashboard' => 'users#dashboard'
+  get '/contribute' => 'experts#contribute'
+
+  post '/experts/add_skills' => 'experts#create_skill'
+  post '/experts/:id' => 'experts#create'
+  post '/request_session' => 'events#create'
+
   
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+
+  after_create :create_expert
+  has_one :expert, :dependent => :destroy 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -10,10 +13,11 @@ class User < ActiveRecord::Base
 	  # attr_accessible :title, :body
 
 	def self.from_omniauth(auth)
-	  where(auth.slice(:provider, :uid, :email)).first_or_create do |user|
+	  where(auth.slice(:provider, :uid, :email, :nickname)).first_or_create do |user|
 	    user.provider = auth.provider
 	    user.uid = auth.uid
-	    user.email = auth.email
+	    puts user.email = auth.info.email
+	    user.name = auth.info.nickname
 	    # user.username = auth.info.nickname
 	  end
 	end
@@ -21,7 +25,7 @@ class User < ActiveRecord::Base
 	def self.new_with_session(params, session)
 	  if session["devise.user_attributes"]
 	    new(session["devise.user_attributes"], without_protection: true) do |user|
-	      user.attributes = params
+	      puts user.attributes = params
 	      user.valid?
 	    end
 	  else
