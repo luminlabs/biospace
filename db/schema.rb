@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130831232525) do
+ActiveRecord::Schema.define(:version => 20130903175924) do
 
   create_table "experts", :force => true do |t|
     t.string   "title"
@@ -22,6 +22,26 @@ ActiveRecord::Schema.define(:version => 20130831232525) do
     t.boolean  "active",     :default => false
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
+  end
+
+  create_table "media", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "mediaId"
+    t.date     "created"
+    t.integer  "duration"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "skills", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "skills_experts", :id => false, :force => true do |t|
+    t.integer "skill_id"
+    t.integer "expert_id"
   end
 
   create_table "users", :force => true do |t|

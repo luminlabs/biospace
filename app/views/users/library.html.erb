@@ -1,0 +1,20 @@
+<div id="wistia_lxlwhkmryz" class="wistia_embed" style="width:640px;height:360px;" data-video-width="640" data-video-height="360">&nbsp;
+
+</div>
+ <%= Wistia::Media.find(:all, :params => { :project_id => 444819 }) %>
+
+<script charset="ISO-8859-1" src="http://fast.wistia.net/static/concat/E-v1.js"></script>
+<script>
+wistiaEmbed = Wistia.embed("lxlwhkmryz", {
+  version: "v1",
+  videoWidth: 640,
+  videoHeight: 360,
+  playerColor: "688AAD"
+});
+// insert the 'bind on play' function
+wistiaEmbed.bind('play', function() {
+  // use the .time() method to jump ahead 10 seconds
+  
+  return this.unbind;
+});
+</script>

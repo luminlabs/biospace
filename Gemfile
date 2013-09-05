@@ -11,7 +11,7 @@ gem 'linkedin'
 gem 'omniauth'
 gem 'omniauth-linkedin'
 
-gem 'wistia-api'
+gem 'wistia-api', require: "wistia"
 
 
 gem "devise"

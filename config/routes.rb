@@ -8,6 +8,7 @@ Biospace::Application.routes.draw do
 
   get '/dashboard' => 'users#dashboard'
   get '/contribute' => 'experts#contribute'
+  get '/library' => 'users#library'
 
   post '/experts/add_skills' => 'experts#create_skill'
   post '/experts/:id' => 'experts#create'

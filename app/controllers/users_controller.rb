@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-	include RequestersHelper
 
   def index  
   end
@@ -28,23 +27,6 @@ class UsersController < ApplicationController
 
   end
 
-  def update #post
-    #update attributes of that user
-    @user = User.find(params[:id])
-
-    if @user.update_attributes(params[:user])
-      @user.create_remember_token
-      flash[:success] = "Password updated successfully"
-      sign_in @user
-      redirect_to @user
-    else
-      @link = "/resetpassword/"+@user.remember_token.to_s
-      redirect_to @link
-      flash[:error] = "Password problem. Please try again"
-    end
-
-  end
-
   def dashboard
     @requests_made_by = Event.where("user_id = ?", current_user.id)
     @requests_made_of = Event.where("expert_id = ?", current_user.id)
@@ -58,4 +40,8 @@ class UsersController < ApplicationController
     experts = Expert.all
     @users = User.all
   end 
+end
+
+def library 
+
 end

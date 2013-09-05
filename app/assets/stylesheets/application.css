@@ -20,7 +20,7 @@ label {
 
 *{
 
-	font-family: "News706BT-RomanC",Georgia;
+	font-family: "proxima-nova",Georgia;
 	color:black;
 
 }
@@ -49,7 +49,7 @@ input {
 .button:hover
 {
 	opacity:0.4;
-	background-color:red !important;
+	background-color:#789A8A !important;
 }
 
 .button.selected {
