@@ -34,14 +34,17 @@ input {
 	max-width: 350px;
 	
 }
-
+/*#banner {
+	height:150px;
+	width:100%;
+}*/
 
 #logo {
 
-	margin-top:10px;
+/*	margin-top:10px;*/
 	margin-left:10px;
 	margin-right:30px;
-	height:100px;
+	height:80px;
 	
 }
 
@@ -129,6 +132,60 @@ input {
 	float:right;
 
 }
+
+
+
+.wistia-upload-widget{position:relative;font-color:white;font-family:"proxima-nova", san-serif}.wistia-upload-widget
+
+.swfu_container{position:absolute;left:0;top:0;width:100%;height:100%;z-index:1010;overflow:hidden}.wistia-upload-widget
+
+.upload-button{
+	font-color:white !important;
+	position:absolute;
+	top:0;left:0;
+	border:2px solid #ccc;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	border-radius:5px;
+	width:100%;
+	height:100%;
+	cursor:pointer;
+	text-align:center;
+	background-color: black;
+/*	width: 180px;*/
+    opacity: 1; 
+}.wistia-upload-widget 
+
+.upload-button.hover{
+	opacity:0.8;
+	background-color:#789A8A !important;
+	/*background:#cef6f9;*/
+	/*background-image:-moz-linear-gradient(top, #eaf2f3, #000000);*/
+	/*background-image:-webkit-gradient(linear, left top, left bottom, from(#eaf2f3), to(#789A8A));*/
+	border:2px solid #bbc
+}.wistia-upload-widget
+
+.upload-button .upload-media{
+	display:inline-block;
+	color:white;
+	text-decoration:none;
+	font-size:1em;
+	text-shadow:-1px 0px #fff
+}.wistia-upload-widget 
+
+.cancel{display:none}.wistia-upload-widget
+.failed{border:2px solid red}.wistia-upload-widget 
+.upload-status{display:none}.wistia-upload-widget 
+.time{text-align:right;font-size:12px;padding-right:20px}.wistia-upload-widget
+ .time .upload-speed{display:none}.wistia-upload-widget .time 
+ .time-left{display:inline}.wistia-upload-widget .time:hover 
+ .upload-speed{display:inline}.wistia-upload-widget .time:hover 
+ .time-left{display:none}.wistia-upload-widget 
+ .progress{background:#fff;margin-bottom:4px;padding:4px;height:20px;position:relative}.wistia-upload-widget 
+ .progress .progress-bar{background:url("/assets/progress.gif");height:100%;width:0%}.wistia-upload-widget
+  .progress span{position:absolute;left:10px;top:20px;font-size:12px;font-weight:bold;text-align:right;color:#789A8A}.wistia-upload-widget
+   /*a.cancel{position:absolute;top:31px;right:0;display:block;background:url("/assets/cancel_icon.png")}.wistia-upload-widget */
+
 
 /*.menu-item a{
 	color:white;

@@ -1,20 +1,16 @@
-<div id="wistia_lxlwhkmryz" class="wistia_embed" style="width:640px;height:360px;" data-video-width="640" data-video-height="360">&nbsp;
 
+<div class="large-3 pull-9 columns" id="sidebar">
+    <%= button_to('Browse Library', library_path, :class=>:'button black', :method=>:get) %>  
+    <%= button_to('Submit Content', contribute_path, :class=>:'button black', :method=>:get) %>  
+    <%= button_to('Seek Mentors', contribute_path, :class=>:'button black', :method=>:get) %>  
 </div>
- <%= Wistia::Media.find(:all, :params => { :project_id => 444819 }) %>
 
-<script charset="ISO-8859-1" src="http://fast.wistia.net/static/concat/E-v1.js"></script>
-<script>
-wistiaEmbed = Wistia.embed("lxlwhkmryz", {
-  version: "v1",
-  videoWidth: 640,
-  videoHeight: 360,
-  playerColor: "688AAD"
-});
-// insert the 'bind on play' function
-wistiaEmbed.bind('play', function() {
-  // use the .time() method to jump ahead 10 seconds
-  
-  return this.unbind;
-});
-</script>
+<div class="large-9 push-3 columns">
+  <%= @library.each do |media| %>
+      <% link = "screening/"+media.id.to_s %>
+      <a href=<%= link %> >
+        <h4><%= media.title %></h4><br>
+        <img src=<%= media.thumbnail %> ><br><hr><br>
+      </a>
+  <% end %>
+</div>

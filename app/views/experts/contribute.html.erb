@@ -1,17 +1,28 @@
 
 <div class="large-3 pull-9 columns" id="sidebar">
-    
- <h5>Lectures </h5>
-    <%= button_to('Test Button', contribute_path, :class=>:'button black', :method=>:get) %>  
-    
+	<h5>Lectures </h5>
+    <%= button_to('Browse Library', contribute_path, :class=>:'button black', :method=>:get) %>  
+	<%= button_to('Submit Content', contribute_path, :class=>:'button black', :method=>:get) %>  
+   
+    <%= button_to('Seek Mentors', contribute_path, :class=>:'button black', :method=>:get) %>  
 </div>
 
 
 <div class="large-9 push-3 columns">
-  <div id="wistia-upload-widget" style="width: 500px; height: 75px;"></div>
-</div>
+    <h2> Submit Content to Knowledge Library </h2>
 
-<script src="http://static.wistia.com/javascripts/upload_widget.js"></script>
+  <%= form_for(@media) do |f| %>
+  <div><%= f.label :title, "Title:" %><br />
+        <%= f.text_field :title,  :class => 'input-width'  %><br></div>
+   <div><%= f.label :description, "Description:" %><br />
+        <%= f.text_field :description %><br></div>
+  <%= f.submit 'Submit Content for Review', { class: 'btn btn-primary' }  %>       
+<% end %>
+    <div id="wistia-upload-widget" style="width: 200px; height: 40px;"><br>
+    <div class="cancel"></div</div>
+	</div>
+
+<script src="assets/wistia_upload.js"></script>
 <script>
-var widget1 = new wistia.UploadWidget({ divId: 'wistia-upload-widget', publicProjectId: 'xbcj0uy56n' });
+  var widget1 = new wistia.UploadWidget({ divId: 'wistia-upload-widget', publicProjectId: 'xbcj0uy56n' });
 </script>

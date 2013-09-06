@@ -1,0 +1,82 @@
+<style>
+
+.day {
+  'background-color': '#87E2F5';
+  'opacity': '.8%'
+}
+.item {
+  'border-color': 'red';
+  "font-weight" : "bold";
+  "background-color" : "red"
+}
+</style>
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+    var parsed = undefined;
+    var url_tofetch = "/experts/availability/<%=params[:id]%>"
+    var date = new Date();
+    var d = date.getDate();
+    var m = date.getMonth();
+    var y = date.getFullYear();
+    console.log(url_tofetch);
+
+    var getEvents = function (callback){
+      $.ajax({
+        url: url_tofetch,
+        type: "get",
+        success: function(content) {
+          callback(content)
+        }
+      });
+    }
+
+    var initCalendar = function(parsed){
+      
+      $('#calendar').fullCalendar({
+        eventClick: function(calEvent, jsEvent, view) {
+        jsEvent.preventDefault();
+        $(this).toggleClass('item')
+        $(function() {
+        $( "#dialog" ).dialog();
+      });
+        $(this).css({'border-color': 'red', "font-weight" : "bold", "background-color" : "red" })
+      },
+
+
+        header: {
+          left: 'prev,next today',
+          center: 'title',
+          right: 'month,basicWeek,basicDay'
+        },
+        editable: true,
+        events: parsed
+      });
+    }
+    getEvents(initCalendar);
+
+});
+
+</script>
+<container class="calscreen">
+<div id='calendar' style="margin-top: 70px; width: 80%; margin-left: 10%;"></div>
+</container>
+
+
+<div class="modal-cal" id="dialog" title="Request a Session">
+
+ <%= form_for(@event) do |f| %>
+       
+       <%= f.label :description %>
+       <%= f.text_area :description, :id => "modalmessage", :maxlength => 140 %><br>
+
+       <%= f.hidden_field :user_id, value: current_user.id %> 
+       <%= f.hidden_field :expert_id, value: params[:id] %> 
+
+       <%= submit_tag 'Submit' %>
+  
+  <% end %>
+</div>
+

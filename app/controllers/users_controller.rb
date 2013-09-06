@@ -1,6 +1,10 @@
-class UsersController < ApplicationController
+class UsersController < Devise::SessionsController
+  before_filter :authenticate_user!
+  def index 
+  end
 
-  def index  
+  def create
+    super
   end
 
   # def show
@@ -12,26 +16,11 @@ class UsersController < ApplicationController
   #   # end
   #   # @user = User.find(params[:id])
   # end
-
-
-  def forgotpassword #get
+  def library 
+    @library = Media.all
   end
 
-  def reset #get
 
-    if @user = User.find_by_remember_token(params[:remember_token])
-      render '/reset'
-    else
-      redirect_to '/not_found'
-    end
-
-  end
-
-  def dashboard
-    @requests_made_by = Event.where("user_id = ?", current_user.id)
-    @requests_made_of = Event.where("expert_id = ?", current_user.id)
-
-  end
 
   def not_found
   end
@@ -42,6 +31,4 @@ class UsersController < ApplicationController
   end 
 end
 
-def library 
 
-end

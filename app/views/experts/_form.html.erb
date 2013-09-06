@@ -1,0 +1,9 @@
+<%= form_for(@expert) do |f| %>
+  <%= hidden_field_tag @expert.toggle!(:active) %> 
+  <%= f.text_field :company, placeholder: 'Company', :class => 'input-width'  %><br> 
+  <%= f.text_field :title, placeholder: 'Title' %><br>   
+  <%= f.text_field :linkedin, placeholder: 'LinkedIn Profile Url'  %><br> 
+  <%= f.text_field :photo, placeholder: 'Photo Url'  %><br> 
+
+  <%= f.submit 'Create Profile Card', { class: 'btn btn-primary' }  %>       
+<% end %>

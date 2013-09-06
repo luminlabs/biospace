@@ -24,12 +24,13 @@ ActiveRecord::Schema.define(:version => 20130903175924) do
     t.datetime "updated_at",                    :null => false
   end
 
-  create_table "media", :force => true do |t|
+  create_table "medias", :force => true do |t|
     t.string   "title"
     t.text     "description"
     t.string   "mediaId"
     t.date     "created"
     t.integer  "duration"
+    t.string   "thumbnail"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end

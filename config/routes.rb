@@ -1,14 +1,29 @@
 Biospace::Application.routes.draw do
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"},
                    controllers: {omniauth_callbacks: "omniauth_callbacks"}
-
+  resources :medias
   # The priority is based upon order of creation:
   # first created -> highest priority.
   root :to => 'content#index' 
 
   get '/dashboard' => 'users#dashboard'
-  get '/contribute' => 'experts#contribute'
-  get '/library' => 'users#library'
+  get '/contribute' => 'medias#contribute'
+  devise_scope :user do
+    get '/library' => 'users#library'
+  end
+  get '/screening/:id' => 'medias#screening'
+  match "/medias/:id" => "medias#new"
+
+
+
+  get '/expert/blarg' => 'experts#blarg'
+  get '/experts/availability/:id' => 'experts#renderAvailabilities'
+  get '/expert/requester_schedule_view' => 'experts#requester_schedule_view'
+
+  post '/experts/schedule/:id/:avail' => 'experts#change_availability'
+  post 'events/toggle_confirmed'
+  get '/search' => 'users#search'
+  get '/dashboard' => 'users#dashboard'
 
   post '/experts/add_skills' => 'experts#create_skill'
   post '/experts/:id' => 'experts#create'

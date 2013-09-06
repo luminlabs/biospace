@@ -1,0 +1,86 @@
+<div class="card_container">
+  <div class="show_container">
+      <div class="profile_image">
+        <%= image_tag(@expert.photo, :class => "userimg2") %>
+      </div>
+      <div class="profile_details">
+        <p style="font:28px 'Chivo', sans-serif; color:#ECF0F1;"><strong><%= @current_user.name.upcase %></strong></p>
+        <hr>
+        <p><strong>Title:</strong> <%= @expert.title %></p>
+        <p><strong>Company:</strong> <%= @expert.company %></p>
+        <p><strong>LinkedIn:</strong> <%= link_to @expert.linkedin %></p>
+      </div>
+      <div class="skills_list">
+        <p style="color:#e74c3c; font-size:18px;"><strong>AREAS OF EXPERTISE</strong></p>
+        <ul id="skills">
+        <% @expert.skills.each do |skill| %>
+        <li class="label label-info"><button type="button" class="delete_skill_button">&times;</button><%= skill.tag %></li>
+        <% end %>
+        </ul>
+      </div>
+  </div>
+  <div class="skill_container">
+  <%= render "skills/formb" %>
+  </div>
+</div>
+
+<div class="availability_blocks">
+  <h1 class="availableblock" style="font: 28px'Chivo', sans-serif; color:#00000;"><strong>Select Available Time Blocks</strong></h1>
+  <div class="avail">
+  <table>
+    <tr>
+    <td></td>
+    <td><h3>M</h3></td>
+    <td><h3>Tue</h3></td>
+    <td><h3>W</h3></td>
+    <td><h3>Th</h3></td>
+    <td><h3>F</h3></td>
+    <td><h3>S</h3></td>
+    <td><h3>Su</h3></td>
+    </tr>
+    <tr>
+      <td><h3>7AM-9AM</h3></td>
+      <td><button class="day" id="MON1"></button></td>
+      <td><button class="day" id="TUE1"></button></td>
+      <td><button class="day" id="WED1"></button></td>
+      <td><button class="day" id="THU1"></button></td>
+      <td><button class="day" id="FRI1"></button></td>
+      <td><button class="day" id="SAT1"></button></td>
+      <td><button class="day" id="SUN1"></button></td>
+    </tr>
+
+    <tr>
+      <td><h3>9AM-12PM</h3></td>
+      <td><button class="day" id="MON2"></button></td>
+      <td><button class="day" id="TUE2"></button></td>
+      <td><button class="day" id="WED2"></button></td>
+      <td><button class="day" id="THU2"></button></td>
+      <td><button class="day" id="FRI2"></button></td>
+      <td><button class="day" id="SAT2"></button></td>
+      <td><button class="day" id="SUN2"></button></td>
+    </tr>
+
+    <tr>
+      <td><h3>12PM-6PM</h3></td>
+      <td><button class="day" id="MON3"></button></td>
+      <td><button class="day" id="TUE3"></button></td>
+      <td><button class="day" id="WED3"></button></td>
+      <td><button class="day" id="THU3"></button></td>
+      <td><button class="day" id="FRI3"></button></td>
+      <td><button class="day" id="SAT3"></button></td>
+      <td><button class="day" id="SUN3"></button></td>
+    </tr>
+
+     <tr>
+      <td><h3>6PM-11PM</h3></td>
+      <td><button class="day" id="MON4"></button></td>
+      <td><button class="day" id="TUE4"></button></td>
+      <td><button class="day" id="WED4"></button></td>
+      <td><button class="day" id="THU4"></button></td>
+      <td><button class="day" id="FRI4"></button></td>
+      <td><button class="day" id="SAT4"></button></td>
+      <td><button class="day" id="SUN4"></button></td>
+    </tr>
+  </table>
+</div>
+</div>
