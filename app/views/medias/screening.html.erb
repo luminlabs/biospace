@@ -4,18 +4,19 @@
     <%= button_to('Back to Library', library_path, :class=>:'button black', :method=>:get) %>  
 
 </div>
-
+<!-- k9ntl8g5yg -->
+<!-- lxlwhkmryz -->
 <div class="large-9 push-3 columns">
   <%= @id_string %><br>
   <%= @media.mediaId %>
-  <div id="wistia_lxlwhkmryz" class="wistia_embed" style="width:640px;height:360px;" data-video-width="640" data-video-height="360">&nbsp;
+  <div id= <%= @id_string %> class="wistia_embed" style="width:640px;height:360px;" data-video-width="640" data-video-height="360">&nbsp;
   </div>
 
 </div>
 
 <script charset="ISO-8859-1" src="http://fast.wistia.net/static/concat/E-v1.js"></script>
 <script>
-wistiaEmbed = Wistia.embed("lxlwhkmryz", {
+wistiaEmbed = Wistia.embed(" <%= @media.mediaId %>", {
   version: "v1",
   videoWidth: 640,
   videoHeight: 360,
